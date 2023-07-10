@@ -11,7 +11,8 @@ function WatchNextList({watchVideos, deleteVideo, addVideo}){
             <br></br>
             <ol>
                 {watchVideos.map(video => {
-                    return <WatchNextItem 
+                    return <WatchNextItem
+                    key={video.id} 
                     watchVideo={video} 
                     onDeleteVideo={deleteVideo}
                     />

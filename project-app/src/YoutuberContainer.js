@@ -1,14 +1,14 @@
 import React from "react"
 import Youtuber from "./Youtuber"
 
-function YoutuberContainer({youtubers}){
+function YoutuberContainer({passYoutubers}){
 
-    const displayYoutubers=youtubers.map(youtuber=>{
-        return <Youtuber youtuber={youtuber} key={youtuber.youtuber}/>
+    const displayYoutubers=passYoutubers.map(youtuber=>{
+        return <Youtuber passYoutuber={youtuber} key={youtuber.youtuber}/>
     })
 
     return(
-        <div>
+        <div className="ui grid container">
            {displayYoutubers}
         </div>
     )

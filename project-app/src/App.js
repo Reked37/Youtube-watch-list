@@ -5,6 +5,7 @@ import YoutuberContainer from "./YoutuberContainer";
 import Home from "./Home"
 import AddYoutuber from "./AddYoutuber";
 import WatchNextList from "./WatchNextList";
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   const[youtubers, setYoutubers]=useState([])
@@ -38,12 +39,12 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="background">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="addyoutuber" element={<AddYoutuber onPostYoutuber={postYoutuber}/>}></Route>
-        <Route path="listofyoutubers" element={<YoutuberContainer youtubers={youtubers} />}></Route>
+        <Route path="listofyoutubers" element={<YoutuberContainer passYoutubers={youtubers} />}></Route>
         <Route path="watchnext" element={<WatchNextList 
         watchVideos={watchVideos}
         addVideo={postNewVideo}
