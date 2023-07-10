@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar"
 import YoutuberContainer from "./YoutuberContainer";
 import Home from "./Home"
+import AddYoutuber from "./AddYoutuber";
 
 function App() {
   const[youtubers, setYoutubers]=useState([])
@@ -12,7 +13,8 @@ function App() {
     .then(data=>setYoutubers(data))
   },[])
 
-  function postEntertainer(newYoutuber){
+  function postYoutuber(newYoutuber){
+    console.log(newYoutuber)
     setYoutubers([...youtubers,newYoutuber])
   }
 
@@ -21,8 +23,11 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Home />
-      <YoutuberContainer youtubers={youtubers} />
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="addyoutuber" element={<AddYoutuber onPostYoutuber={postYoutuber}/>}></Route>
+        <Route path="listofyoutubers" element={<YoutuberContainer youtubers={youtubers} />}></Route>
+      </Routes>
     </div>
   );
 }

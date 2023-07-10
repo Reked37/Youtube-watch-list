@@ -4,7 +4,7 @@ import Youtuber from "./Youtuber"
 function YoutuberContainer({youtubers}){
 
     const displayYoutubers=youtubers.map(youtuber=>{
-        return <Youtuber youtuber={youtuber} key={youtuber.id}/>
+        return <Youtuber youtuber={youtuber} key={youtuber.youtuber}/>
     })
 
     return(

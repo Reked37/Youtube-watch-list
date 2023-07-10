@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom"
 function Navbar(){
 
     return(
-        <div>
-            <div href="/">Home</div>
-            <div href="/youtubers">Youtubers</div>
-            <div href="/addyoutubers">Add Entertainer</div>
+        <div className="navbar">
+            <NavLink to="/" className="navli">Home</NavLink>
+            <NavLink to="listofyoutubers" className="navli">Youtubers</NavLink>
+            <NavLink to="addyoutuber" className="navli">Add Entertainer</NavLink>
         </div>
     )
 }
