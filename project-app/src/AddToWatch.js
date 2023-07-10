@@ -34,9 +34,15 @@ function AddToWatch({onAddVideo}){
     return(
         <form onSubmit={handleSubmit}>
             <label>Channel: </label>
-            <input onChange={handleChange} name="channel" type="text" value={addToWatch.channel}></input>
+            <input onChange={handleChange} name="channel" type="text" 
+            value={addToWatch.channel}
+            placeholder="Add Channel"
+            ></input>
             <label>Video: </label>
-            <input onChange={handleChange} name="video" type="text" value={addToWatch.video}></input>
+            <input onChange={handleChange} name="video" type="text" 
+            value={addToWatch.video}
+            placeholder="Video's Name"
+            ></input>
             <button  type="submit">Add To Watch List</button>
         </form>
     )

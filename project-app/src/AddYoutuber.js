@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { useNavigate, redirect }from "react-router-dom"
+import { useNavigate }from "react-router-dom"
 
 function AddYoutuber({onPostYoutuber}){
 const [newYoutuber, setNewYoutuber]= useState({
@@ -7,8 +7,8 @@ const [newYoutuber, setNewYoutuber]= useState({
     logo:"",
     subs:""
 })
-    // const navigate=useNavigate()
-    // console.log(navigate)
+    const navigate=useNavigate()
+   
     function handleSubmit(e){
         e.preventDefault()
         console.log(newYoutuber.youtuber)
@@ -23,7 +23,7 @@ const [newYoutuber, setNewYoutuber]= useState({
         })
         .then(res=>res.json())
         .then(data=>onPostYoutuber(data))
-        redirect("/listofyoutubers")
+        navigate("/listofyoutubers")
         setNewYoutuber({
             youtuber:"",
             logo:"",
@@ -44,11 +44,20 @@ const [newYoutuber, setNewYoutuber]= useState({
             <br></br>
             <form onSubmit={handleSubmit}>
                 <label name="youtuber">Youtuber: </label>
-                <input onChange={handleChanges} name="youtuber" type="text" value={newYoutuber.youtuber}></input>
+                <input onChange={handleChanges} name="youtuber" type="text" 
+                    value={newYoutuber.youtuber}
+                    placeholder="Add a youtuber"
+                    ></input>
                 <label name="logo"> Logo: </label>
-                <input onChange={handleChanges} name="logo" type="text" value={newYoutuber.logo}></input>
+                <input onChange={handleChanges} name="logo" type="text" 
+                value={newYoutuber.logo}
+                placeholder="Add Channel Logo"
+                ></input>
                 <label name="subs"> Sub Count: </label>
-                <input onChange={handleChanges} name="subs" type="number" value={newYoutuber.subs}></input>
+                <input onChange={handleChanges} name="subs" type="number" 
+                value={newYoutuber.subs}
+                placeholder="0"
+                ></input>
                 <button>Submit!</button>
             </form>
         </div>
