@@ -61,15 +61,15 @@
       "subs": 94
     }
   ],
-  "watchnext":[
+  "watchnext": [
     {
-      "id":1,
+      "id": 1,
       "channel": "xQc",
       "video": "Day in the Life of xQc"
     },
     {
-      "id":2,
-      "channel":"Airrack",
+      "id": 2,
+      "channel": "Airrack",
       "video": "100 Dates in 24 Hours!"
     }
   ]

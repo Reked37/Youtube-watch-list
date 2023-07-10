@@ -28,6 +28,15 @@ function App() {
     setYoutubers([...youtubers,newYoutuber])
   }
 
+  function handleDeleteVideo(deleteVideo){
+    const removeVideo=watchVideos.filter(video=> video.id !== deleteVideo.id)
+    setWatchVideos(removeVideo)
+  }
+
+  function postNewVideo(newVideo){
+    setWatchVideos([...watchVideos, newVideo])
+  }
+
   return (
     <div>
       <Navbar />
@@ -35,7 +44,11 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="addyoutuber" element={<AddYoutuber onPostYoutuber={postYoutuber}/>}></Route>
         <Route path="listofyoutubers" element={<YoutuberContainer youtubers={youtubers} />}></Route>
-        <Route path="watchnext" element={<WatchNextList watchVideos={watchVideos}/>}></Route>
+        <Route path="watchnext" element={<WatchNextList 
+        watchVideos={watchVideos}
+        addVideo={postNewVideo}
+        deleteVideo={handleDeleteVideo}
+        />}></Route>
       </Routes>
     </div>
   );

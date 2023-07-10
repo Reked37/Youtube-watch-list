@@ -1,12 +1,20 @@
 import React from "react"
 
-function WatchNextItem({watchVideo}){
+function WatchNextItem({watchVideo, onDeleteVideo}){
    const { id, channel, video}=watchVideo
+
+    function deleteItem(){
+        fetch(`http://localhost:3000/watchnext/${watchVideo}`,{
+            method: "DELETE",
+        })
+        .then(res=>res.json())
+        .then(()=>onDeleteVideo(watchVideo))
+    }
 
     return(
         <div>
             <li>{channel} : {video}</li>
-            <button>Finished</button>
+            <button onClick={deleteItem}>Finished</button>
         </div>
     )
 }

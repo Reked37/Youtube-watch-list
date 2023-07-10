@@ -2,7 +2,7 @@ import React from "react"
 import WatchNextItem from "./WatchNextItem"
 import AddToWatch from"./AddToWatch"
 
-function WatchNextList({watchVideos}){
+function WatchNextList({watchVideos, deleteVideo, addVideo}){
     console.log(watchVideos)
     return(
         <div>
@@ -11,7 +11,11 @@ function WatchNextList({watchVideos}){
             <br></br>
             <ol>
                 {watchVideos.map(video => {
-                    return <WatchNextItem watchVideo={video} />
+                    return <WatchNextItem 
+                    watchVideo={video} 
+                    onDeleteVideo={deleteVideo}
+                    onAddVideo={addVideo}
+                    />
                 })}
             </ol>
         </div>
