@@ -5,9 +5,10 @@ function Navbar(){
 
     return(
         <div className="navbar">
-            <NavLink to="/" className="navli">Home</NavLink>
-            <NavLink to="listofyoutubers" className="navli">Youtubers</NavLink>
-            <NavLink to="addyoutuber" className="navli">Add Entertainer</NavLink>
+            <NavLink to="watchnext">Watch Next</NavLink>
+            <NavLink to="addyoutuber" >Add Youtuber</NavLink>
+            <NavLink to="listofyoutubers" >Youtubers</NavLink>
+            <NavLink to="/" >Home</NavLink>
         </div>
     )
 }

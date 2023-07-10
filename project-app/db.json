@@ -60,5 +60,17 @@
       "logo": "https://yt3.googleusercontent.com/ytc/AGIKgqPPegC3IaW_vq9Ul_ks94evM4AFXyfD2FlhR48vN94=s900-c-k-c0x00ffffff-no-rj",
       "subs": 94
     }
+  ],
+  "watchnext":[
+    {
+      "id":1,
+      "channel": "xQc",
+      "video": "Day in the Life of xQc"
+    },
+    {
+      "id":2,
+      "channel":"Airrack",
+      "video": "100 Dates in 24 Hours!"
+    }
   ]
 }

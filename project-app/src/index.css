@@ -5,10 +5,9 @@
   overflow:hidden;
   top:0;
   width:100%;
-  position:fixed
 }
 
-.navli{
+.navbar a{
   color:rgb(85, 30, 136);
   float:right;
   padding:10px 30px;
@@ -16,9 +15,9 @@
   background:green;
 }
 
-.navli:hover{
+.navbar a:hover{
   background-color: rgb(44, 182, 74);
 }
-.navbar li:active{
+.navbar a.active{
   background-color: rgb(44, 182, 74);
 }
