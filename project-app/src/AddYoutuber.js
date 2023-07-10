@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import Youtuber from "./Youtuber"
+import { useNavigate, redirect }from "react-router-dom"
 
 function AddYoutuber({onPostYoutuber}){
 const [newYoutuber, setNewYoutuber]= useState({
@@ -7,7 +7,8 @@ const [newYoutuber, setNewYoutuber]= useState({
     logo:"",
     subs:""
 })
-
+    // const navigate=useNavigate()
+    // console.log(navigate)
     function handleSubmit(e){
         e.preventDefault()
         console.log(newYoutuber.youtuber)
@@ -22,6 +23,12 @@ const [newYoutuber, setNewYoutuber]= useState({
         })
         .then(res=>res.json())
         .then(data=>onPostYoutuber(data))
+        redirect("/listofyoutubers")
+        setNewYoutuber({
+            youtuber:"",
+            logo:"",
+            subs:""
+        })
     }
 
     function handleChanges(e){
@@ -36,11 +43,11 @@ const [newYoutuber, setNewYoutuber]= useState({
             <br></br>
             <br></br>
             <form onSubmit={handleSubmit}>
-                <label name="youtuber">Youtuber </label>
+                <label name="youtuber">Youtuber: </label>
                 <input onChange={handleChanges} name="youtuber" type="text" value={newYoutuber.youtuber}></input>
-                <label name="logo">Logo </label>
+                <label name="logo"> Logo: </label>
                 <input onChange={handleChanges} name="logo" type="text" value={newYoutuber.logo}></input>
-                <label name="subs">Subs</label>
+                <label name="subs"> Sub Count: </label>
                 <input onChange={handleChanges} name="subs" type="number" value={newYoutuber.subs}></input>
                 <button>Submit!</button>
             </form>

@@ -7,14 +7,13 @@ function WatchNextList({watchVideos, deleteVideo, addVideo}){
     return(
         <div>
             <br></br>
-            <AddToWatch/>
+            <AddToWatch onAddVideo={addVideo}/>
             <br></br>
             <ol>
                 {watchVideos.map(video => {
                     return <WatchNextItem 
                     watchVideo={video} 
                     onDeleteVideo={deleteVideo}
-                    onAddVideo={addVideo}
                     />
                 })}
             </ol>

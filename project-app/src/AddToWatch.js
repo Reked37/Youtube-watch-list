@@ -18,7 +18,10 @@ function AddToWatch({onAddVideo}){
         })
         .then(res=>res.json())
         .then(data=>onAddVideo(data))
-        setAddToWatch
+        setAddToWatch({
+            channel:"",
+            video:""
+        })
     }
 
     function handleChange(event){

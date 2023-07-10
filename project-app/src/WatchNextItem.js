@@ -4,7 +4,7 @@ function WatchNextItem({watchVideo, onDeleteVideo}){
    const { id, channel, video}=watchVideo
 
     function deleteItem(){
-        fetch(`http://localhost:3000/watchnext/${watchVideo}`,{
+        fetch(`http://localhost:3000/watchnext/${watchVideo.id}`,{
             method: "DELETE",
         })
         .then(res=>res.json())
