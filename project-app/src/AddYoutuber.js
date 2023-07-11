@@ -42,23 +42,30 @@ const [newYoutuber, setNewYoutuber]= useState({
         <div>
             <br></br>
             <br></br>
-            <form onSubmit={handleSubmit}>
-                <label name="youtuber">Youtuber: </label>
-                <input onChange={handleChanges} name="youtuber" type="text" 
-                    value={newYoutuber.youtuber}
-                    placeholder="Add a youtuber"
+            <form className="ui form" onSubmit={handleSubmit}>
+                <div className="field">
+                    <label name="youtuber">Youtuber: </label>
+                    <input onChange={handleChanges} name="youtuber" type="text"
+                        value={newYoutuber.youtuber}
+                        placeholder="Add a Youtuber"
+                        width="300"
                     ></input>
-                <label name="logo"> Logo: </label>
-                <input onChange={handleChanges} name="logo" type="text" 
-                value={newYoutuber.logo}
-                placeholder="Add Channel Logo"
-                ></input>
-                <label name="subs"> Sub Count: </label>
-                <input onChange={handleChanges} name="subs" type="number" 
-                value={newYoutuber.subs}
-                placeholder="0"
-                ></input>
-                <button>Submit!</button>
+                </div>
+                <div className="field">
+                    <label name="logo"> Logo: </label>
+                    <input onChange={handleChanges} name="logo" type="text"
+                        value={newYoutuber.logo}
+                        placeholder="Add Channel Logo URL"
+                    ></input>
+                </div>
+                <div className="field">
+                    <label name="subs"> Sub Count: </label>
+                    <input onChange={handleChanges} name="subs" type="number"
+                        value={newYoutuber.subs}
+                        placeholder="0"
+                    ></input>
+                </div>
+                <button className="ui blue button">Submit!</button>
             </form>
         </div>
     )

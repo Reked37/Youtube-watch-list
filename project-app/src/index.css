@@ -31,3 +31,36 @@
 .ui.card .image{
   object-fit:scale-down
 }
+
+.text{
+  font-size: large;
+  text-align:center;
+  border-style: groove;
+  border-color:greenyellow;
+  
+}
+.header{
+  text-align: center;
+}
+.img{
+  text-align: center;
+}
+form.ui.form input[type='text']{
+  background: blue;
+  width:500px
+}
+form.ui.form input[type='number']{
+  background:green;
+  width:500px
+}
+form.ui.form{
+  text-align: center;
+}
+.list{
+  text-align: center;
+  display:block;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: large;
+  font-family: "Monaco";
+}

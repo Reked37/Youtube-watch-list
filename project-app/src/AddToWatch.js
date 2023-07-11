@@ -32,18 +32,22 @@ function AddToWatch({onAddVideo}){
     console.log(addToWatch)
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="ui form">
+            <div className="field">
             <label>Channel: </label>
             <input onChange={handleChange} name="channel" type="text" 
             value={addToWatch.channel}
             placeholder="Add Channel"
             ></input>
+            </div>
+            <div className="field">
             <label>Video: </label>
             <input onChange={handleChange} name="video" type="text" 
             value={addToWatch.video}
             placeholder="Video's Name"
             ></input>
-            <button  type="submit">Add To Watch List</button>
+            </div>
+            <button  className="ui olive button" type="submit">Add To Watch List</button>
         </form>
     )
 }

@@ -13,8 +13,8 @@ function WatchNextItem({watchVideo, onDeleteVideo}){
 
     return(
         <div>
-            <li>{channel} : {video}</li>
-            <button onClick={deleteItem}>Finished</button>
+            <li className="list">{channel} : {video}</li>
+            <button onClick={deleteItem} className="ui red button">Finished</button>
         </div>
     )
 }
